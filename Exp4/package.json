@@ -1,1 +1,26 @@
 
+{
+  "name": "interactive-calendar",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "msw": "^2.11.3"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.8.0",
+    "@testing-library/react": "^16.3.0",
+    "@vitejs/plugin-react": "^4.7.0",
+    "jsdom": "^26.1.0",
+    "vite": "^7.1.3",
+    "vitest": "^3.2.4"
+  }
+}
