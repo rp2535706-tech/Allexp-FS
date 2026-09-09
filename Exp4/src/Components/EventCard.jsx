@@ -21,62 +21,54 @@ const EventCard = React.memo(
       );
     };
 
-
     const handleDragEnd = (e) => {
 
       e.currentTarget.classList.remove(
         "dragging"
       );
-
     };
-
 
     const handleDelete = (e) => {
 
-      e.preventDefault();
       e.stopPropagation();
 
-      const confirmed =
-        window.confirm(
-          `Delete "${event.title}"?`
-        );
-
-      if (confirmed) {
-        onDelete(event.id);
-      }
-
+      onDelete(event.id);
     };
-
 
     return (
       <div
-        className={`event-card ${event.type}`}
-        draggable={true}
-        onDragStart={
-          handleDragStart
-        }
-        onDragEnd={
-          handleDragEnd
+        className="day-event"
+        draggable
+        onDragStart={handleDragStart}
+        onDragEnd={handleDragEnd}
+        onClick={(e) =>
+          e.stopPropagation()
         }
       >
 
-        <div className="event-content">
+        <div className="event-main">
 
-          <span className="event-time">
-            {event.time}
+          <span className="event-grip">
+            ⠿
           </span>
 
-          <span className="event-name">
-            {event.title}
-          </span>
+          <div className="event-content">
+
+            <span className="event-title">
+              {event.title}
+            </span>
+
+            <span className="event-time">
+              {event.time}
+            </span>
+
+          </div>
 
         </div>
 
-
         <button
-          className="event-delete"
+          className="delete-event"
           onClick={handleDelete}
-          draggable={false}
           title="Delete event"
         >
           ×
